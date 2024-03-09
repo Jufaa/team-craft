@@ -21,3 +21,57 @@ export class GroupRoutes {
     return router;
   }
 }
+
+/**
+ * @swagger
+ * /api/v1/groups:
+ *    get:
+ *        summary: Get all groups
+ *        security:
+ *            - bearerAuth: []
+ *        tags:
+ *            - Groups
+ *        responses:
+ *            200:
+ *                description: List of groups
+ *            500:
+ *                description: Internal server error
+ * /api/v1/groups/{id}:
+ *    get:
+ *        summary: Get group by id
+ *        security:
+ *            - bearerAuth: []
+ *        tags:
+ *            - Groups
+ *        parameters:
+ *            - in: path
+ *              name: id
+ *              required: true
+ *              description: Group id
+ *              schema:
+ *                  type: string
+ *        responses:
+ *            200:
+ *                description: List of groups
+ *            500:
+ *                description: Internal server error
+ * /api/v1/add/{id}:
+ *  post:
+ *      summary: Add member to group
+ *      security:
+ *          - bearerAuth: []
+ *      tags:
+ *          - Groups
+ *      parameters:
+ *          - in: path
+ *            name: id
+ *            required: true
+ *            description: Group id
+ *            schema:
+ *                type: string
+ *      responses:
+ *          200:
+ *              description: Member added to group
+ *          500:
+ *              description: Internal server error
+ */
